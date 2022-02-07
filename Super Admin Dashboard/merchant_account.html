@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Merchant Dashboard</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            
+            <ul class="list-unstyled components">
+                
+               <li>
+                    <a href="merchant.html">Home</a>
+                </li>
+                <li>
+                    <a href="orders.html">Uploads</a>
+                </li>
+                <li>
+                    <a href="merchantfinance.html">Finance</a>
+                </li>
+                <li>
+                    <a href="merchantprofile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="contactus.html">Contact Us</a>
+                </li>
+                <li>
+                    <a href="/home/daniel/Desktop/Ticket-Sasa/TicketPoa/login.html">Log out</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-success">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-light">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                    <h4 class="ml-auto text-light">Account</h4>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg" style="background-color: #F0FFF0;">
+                <a href="merchantprofile.html" class="mr-3">Bank Details</a>
+                <a href="merchant_account.html" class="btn btn-success">Account</a>
+            </nav>
+
+            <div class="container mt-5">
+                
+            
+                <form>
+                    <div class="container row">
+                            <div class="file-upload col-md-4 ">
+                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                                    
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                        <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <img class="file-upload-image" src="#" alt="your image" />
+                                        <div class="image-title-wrap">
+                                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class=" row col-md-8">
+                                <div class="form-group mr-3" style="width: 250px;">
+                                    <label for="inputtext">First Name:</label>
+                                    <input type="text" class="form-control" id="inputtext">
+                                </div>
+                                <div class="form-group mr-3" style="width: 250px;">
+                                    <label for="inputtext">Last Name:</label>
+                                    <input type="text" class="form-control" id="inputtext">
+                                </div>
+                                <div class="form-group mr-3" style="width: 250px;">
+                                    <label for="inputtext">Email Address:</label>
+                                    <input type="email" class="form-control" id="inputtext">
+                                </div>
+                                <div class="form-group mr-3" style="width: 250px;">
+                                    <label for="inputtext">Phone Number:</label>
+                                    <input type="text" class="form-control" id="inputtext">
+                                </div> 
+                                <div class="form-group">   
+                                    <button  class="btn btn-success ml-auto" style="width: 250px;">SAVE</button>
+                                </div>                      
+                            </div>
+                            
+                            
+                    </div>
+
+                    
+                </form>
+                
+        </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="upload.js"></script>
+</body>
+
+</html>
